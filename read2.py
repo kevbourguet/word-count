@@ -1,9 +1,9 @@
-words = [open('article.txt').read().split()]
-
+# words = [open('article.txt').read().split()]
+words = ("hello goodbye hello ? - ” ")
 # print(len(words))
 # print(type(words))
 # print(words[0])
-new_words = words[0]
+new_words = words.split()#[0]
 newer_words = []
 newest_words = []
 newest_words2 = []
@@ -14,7 +14,7 @@ for a in new_words:
     newer_words.append(a.lower())
 
 for i in newer_words:
-    newest_words.append(i.strip('”.!?,()$'))
+    newest_words.append(i.strip('”.!,()$-[]?%')) 
 for a in newest_words:
     newest_words2.append(a.strip('“'))
 for b in newest_words2:
@@ -26,11 +26,13 @@ for b in newest_words2:
 #         last_words.append(x)
 # # print(len(last_words))
 
+print(newest_words3)
+
 def word_count(x):
     counts = dict()
     words = x
 
-    for word in words:
+    for word in newest_words3:
         if word in counts:
             counts[word] += 1
         else:
@@ -38,8 +40,12 @@ def word_count(x):
         
     return counts
 
-    a = sorted(counts.items(), key=lambda x: x[1], reverse=True)
-    print(a)
+    for x in counts:
+
+        counts = sorted(counts.items(), key=lambda x: x[1], reverse=True)
+
+# #     a = sorted(counts.items(), key=lambda x: x[1], reverse=True)
+# # print(a)
 
         
 print(word_count(newest_words3))

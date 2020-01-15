@@ -1,2 +1,4 @@
-or elem in sorted(counts.items(), reverse=True) :
-    #     print(elem[0] , " ::" , elem[1] )
+counts = sorted(counts.items(), key=lambda x: x[1], reverse=True)
+
+# #     a = sorted(counts.items(), key=lambda x: x[1], reverse=True)
+# # print(a)
